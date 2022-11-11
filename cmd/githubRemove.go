@@ -31,14 +31,14 @@ var githubRemoveCmd = &cobra.Command{
 		log.Println("Org used:", viper.GetString("github.owner"))
 		log.Println("dry-run:", globalFlags.DryRun)
 
-		if viper.GetBool("github.terraformapplied.gitops") {
+		//if viper.GetBool("github.terraformapplied.gitops") {
 
-			informUser("Destroying repositories with terraform in GitHub", globalFlags.SilentMode)
+		informUser("Destroying repositories with terraform in GitHub", globalFlags.SilentMode)
 
-			github.DestroyGitHubTerraform(globalFlags.DryRun)
+		github.DestroyGitHubTerraform(globalFlags.DryRun)
 
-			informUser("GitHub terraform destroyed", globalFlags.SilentMode)
-		}
+		informUser("GitHub terraform destroyed", globalFlags.SilentMode)
+		//}
 
 		log.Printf("GitHub terraform Executed with Success")
 		return nil
